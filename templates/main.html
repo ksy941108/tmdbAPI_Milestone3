@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+
+<body>
+    <div class=container>
+        <img src="https://image.tmdb.org/t/p/w500{{posterImg}}" /><br>
+    </div>
+
+    <div class="formbutton">
+        <form action="/logout">
+            <input class=button type="submit" value="logout">
+        </form>
+    </div>
+
+    <div class=title>
+        <h1>Movie Information: TMDB</h1>
+
+    </div>
+
+    <div class=text>
+        <h2>Title: {{title}}</h2><br>
+        <h2>Tagline: {{tagline}}</h2><br>
+        <h2>Genre: {{genre}}</h2><br>
+        <h2>Wikipedia URL: <a href={{url}}> {{title}} </a></h2>
+
+        <!-- fix the movie id print line -->
+
+        <form method="POST" action="/add">
+            <b>User ID: <input type="text" name="user" value="{{current_user}}" readonly /> </b><br>
+            <b>Movie ID: <input type="text" name="movie_title" value="{{random_id}}" readonly /> </b><br>
+            Rating (out of 10): <input type="number" name="ratings" placeholder="10" min="0" max="10"><br>
+            Comment: <input class=textbox type="text" name="comments"> <br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <div>
+            <a href="{{ url_for('bp.delete') }}"> Click here to delete or edit your comments </a>
+        </div>
+
+        <h2> Comments: </h2>
+        <p class=fontsize>
+            {% for i in range(num_comment) %}
+            {% set reverse = num_comment-i-1 %}
+            User ID: {{user_list[reverse]}}<br>
+            movie id: {{random_id}}<br>
+            Rating:{{rating_list[reverse]}}<br>
+            Comment:{{comment_list[reverse]}}<br><br>
+            {% endfor %}
+        </p>
+        <br>
+    </div>
+</body>
+
+</html>

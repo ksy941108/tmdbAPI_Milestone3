@@ -1,0 +1,52 @@
+body{
+    background-image: linear-gradient(to bottom right, lightblue, pink);
+}
+
+.container{
+    display: flex;
+    width: 10%;
+    height: auto;
+    margin: auto;
+    float: left;
+}
+
+.text {
+    height: auto;
+    width: auto;
+    margin-left: 20%;
+    float: left;
+    padding: 10%;
+}
+
+.title {
+    height: auto;
+    width: auto;
+    margin-left: 30%;
+    float: left;
+}
+.formbutton{
+    text-align: right;
+
+}
+
+.loginbutton{
+    text-align: center;
+}
+
+.button{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.textbox {
+    width: 70%;
+    font: 1.4em/1.6em;
+    color: #095484;
+
+}
+
+.fontsize{
+    font-size: 24px;
+    font: arial;
+}
+
